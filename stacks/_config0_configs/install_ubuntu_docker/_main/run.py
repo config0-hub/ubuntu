@@ -7,7 +7,7 @@ def run(stackargs):
     stack.parse.add_required(key="hostname")
 
     # Add host group
-    stack.add_hostgroups("config0-hub:::ubuntu::18.04-docker","install_docker")
+    stack.add_hostgroups("config0-publish:::ubuntu::18.04-docker","install_docker")
 
     # Initialize 
     stack.init_variables()

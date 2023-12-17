@@ -157,8 +157,8 @@ def run(stackargs):
                              types="str")
 
     # Add substacks
-    stack.add_substack('config0-hub:::bootstrap_ed')
-    stack.add_substack('config0-hub:::ec2_server')
+    stack.add_substack('config0-publish:::bootstrap_ed')
+    stack.add_substack('config0-publish:::ec2_server')
 
     # init the stack namespace
     stack.init_variables()

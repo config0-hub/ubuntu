@@ -42,8 +42,8 @@ def run(stackargs):
     stack.parse.add_optional(key="cloud_tags_hash",default=None,types="str")
 
     # Add substack
-    stack.add_substack('config0-hub:::ec2_server')
-    stack.add_substack('config0-hub:::config0-core::publish_resource')
+    stack.add_substack('config0-publish:::ec2_server')
+    stack.add_substack('config0-publish:::config0_core::publish_resource')
 
     # Initialize 
     stack.init_variables()
