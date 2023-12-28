@@ -41,7 +41,7 @@
 ```
 infrastructure:
    ec2_instance:
-       stack_name: config0-hub:::ec2_ubuntu
+       stack_name: config0-publish:::ec2_ubuntu
        arguments:
           hostname: test-instance
           size: t3.micro
