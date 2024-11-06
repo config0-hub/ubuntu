@@ -117,6 +117,7 @@ def run(stackargs):
                         "public_dns_name",
                         "public_ip",
                         "instance_id",
+                        "id",
                         "key_name",
                         "ami",
                         "availability_zone",
