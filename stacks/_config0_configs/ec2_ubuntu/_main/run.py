@@ -16,8 +16,7 @@
 """
 
 def run(stackargs):
-
-    import random
+    """Create and bootstrap an EC2 server instance."""
 
     # Do not add cluster and instance
     stackargs["add_cluster"] = False
@@ -150,7 +149,6 @@ def run(stackargs):
 
     # this will register server as a host for remote execution
     if stack.get_attr("bootstrap_for_exec"):
-
         # Call to bootstrap_ed to config0
         arguments = stack.get_tagged_vars(tag="bootstrap",
                                           output="dict")
