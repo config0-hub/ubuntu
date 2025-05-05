@@ -46,42 +46,14 @@ def run(stackargs):
     # Initialize Variables in stack
     stack.init_variables()
 
-    # Add host to the config0 engine
-    cmd = "host add"
-    order_type = "add-host::api"
-    role = "host/add"
-
-    arguments = stack.get_tagged_vars(tag="host",
-                                      output="dict")
-
-    human_description = f"Adding/Recording host = {stack.hostname}"
-    long_description = f"Adds host = {stack.hostname} to Jiffy"
-
-    stack.insert_builtin_cmd(cmd,
-                             order_type=order_type,
-                             role=role,
-                             human_description=human_description,
-                             long_description=long_description,
-                             display=None,
-                             arguments=arguments)
+    # add hostname to config0
+    stack.host_add(stack.hostname,
+                   stack.ssh_key_name)
 
     # Bootstrap host to the config0 engine
-    cmd = "host bootstrap"
-    order_type = "bootstrap-host::api"
-    role = "host/bootstrap"
-
     arguments = stack.get_tagged_vars(tag="bootstrap",
                                       output="dict")
 
-    human_description = f"Bootstrapping host = {stack.hostname}"
-    long_description = f"Bootstraps host = {stack.hostname} to Jiffy"
-
-    stack.insert_builtin_cmd(cmd,
-                             order_type=order_type,
-                             role=role,
-                             human_description=human_description,
-                             long_description=long_description,
-                             display=None,
-                             arguments=arguments)
+    stack.host_bootstrap(**arguments)
 
     return stack.get_results()
