@@ -19,7 +19,7 @@ This stack adds a host to the config0 engine and performs host bootstrapping ope
 
 ## Dependencies
 
-The code doesn't contain any explicit dependencies (substacks, execgroups, or shelloutconfigs).
+The code doesn't contain any explicit dependencies (substacks, execgroups, or scripts).
 
 ## License
 <pre>

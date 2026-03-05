@@ -125,8 +125,8 @@ def run(stackargs):
                              types="str")
 
     # Add substacks
-    stack.add_substack("config0-publish:::bootstrap_ed")
-    stack.add_substack("config0-publish:::aws_ec2_server")  # use terraform
+    stack.add_substack("config0-hub:::ubuntu::bootstrap_ed")
+    stack.add_substack("config0-hub:::aws::aws_ec2_server")  # use terraform
 
     # init the stack namespace
     stack.init_variables()

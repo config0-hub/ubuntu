@@ -1,4 +1,2 @@
-asset_type: shelloutconfig
-env_vars: []
-shelloutconfigs:
-- config0-publish:::ubuntu::install-docker-pkgs
+scripts:
+- config0-hub:::ubuntu::install-docker-pkgs.sh

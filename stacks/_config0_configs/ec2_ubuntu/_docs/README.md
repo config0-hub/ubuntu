@@ -40,8 +40,8 @@ Creates an AWS EC2 server instance and optionally bootstraps it for remote execu
 ## Dependencies
 
 ### Substacks
-- [config0-publish:::bootstrap_ed](https://api-app.config0.com/web_api/v1.0/stacks/config0-publish/bootstrap_ed)
-- [config0-publish:::aws_ec2_server](https://api-app.config0.com/web_api/v1.0/stacks/config0-publish/aws_ec2_server)
+- [config0-hub:::ubuntu::bootstrap_ed](https://api-app.config0.com/web_api/v1.0/stacks/config0-hub/bootstrap_ed)
+- [config0-hub:::aws::aws_ec2_server](https://api-app.config0.com/web_api/v1.0/stacks/config0-hub/aws_ec2_server)
 
 ## License
 <pre>
