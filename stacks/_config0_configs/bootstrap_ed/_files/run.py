@@ -46,14 +46,20 @@ def run(stackargs):
     # Initialize Variables in stack
     stack.init_variables()
 
-    # add hostname to config0
-    stack.host_add(stack.hostname,
+    # register hostname as a host resource with config0
+    stack.add_host(stack.hostname,
                    stack.ssh_key_name)
 
     # Bootstrap host to the config0 engine
     arguments = stack.get_tagged_vars(tag="bootstrap",
                                       output="dict")
 
+    # ── CONFIG0-REWRITE · EXPECTED-BROKEN · EB-0001 ──────────────────────
+    # host_bootstrap is REMOVED (obsolete): SSM auto-bootstraps the host, so
+    # this SSH-enablement step is gone. Host execution moves to the onboarding
+    # SSM Step Function (task-token output). Raises until removed.
+    # Ref: current/expected-broken-registry.md#eb-0001
+    # ─────────────────────────────────────────────────────────────────────
     stack.host_bootstrap(**arguments)
 
     return stack.get_results()
