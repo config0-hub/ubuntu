@@ -24,6 +24,10 @@ def run(stackargs):
     stack.parse.add_required(key="hostname",
                              types="str")
 
+    # selects the ssm_ec2_exec_eventbridge install the host order runs through
+    stack.parse.add_required(key="install_name",
+                             types="str")
+
     # add host group
     stack.add_hostgroups("config0-hub:::ubuntu::docker", "install_docker")
 
@@ -37,6 +41,7 @@ def run(stackargs):
         "human_description": f"Install Docker on host {stack.hostname}",
         "automation_phase": "infrastructure",
         "hostname": stack.hostname,
+        "install_name": stack.install_name,
         "groups": stack.install_docker
     }
     stack.add_groups_to_host(**inputargs)
